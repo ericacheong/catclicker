@@ -1,0 +1,24 @@
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <h1>Cat Clicker</h1>
+    <img id="catty" src="catty.jpg" />
+    <p id="count"></p>
+    <script>
+      var elem = document.getElementById("catty");
+      var count = 0;
+      elem.addEventListener('click', function() {
+        console.log(count++);
+
+        var countNode = document.getElementById("count");
+        var textnode = document.createTextNode("Count: " + count);
+        if (countNode.hasChildNodes()){
+          countNode.removeChild(countNode.childNodes[0]);
+        }
+        countNode.appendChild(textnode);
+      }, false);
+    </script>
+</body>
